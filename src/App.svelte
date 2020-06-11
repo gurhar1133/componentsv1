@@ -54,6 +54,9 @@
 		grid-template-columns: repeat(2, 1fr);
 		
 	}
+	h2{
+		margin-left: 2rem;
+	}
 </style>
 
 <!-- Using a list component as a navbar-->
@@ -67,7 +70,7 @@
 		on:select={selectionMade}
 		/>
 
-
+<hr>
 <div bind:this={lists}>
 <h2>Lists:</h2>
 
@@ -105,7 +108,7 @@
 	/>
 
 </div>
-
+<hr>
 <div id="cards" bind:this={cards}>
 <h2>Cards:</h2>
 <Card title="{"Card 1"}"
@@ -203,9 +206,13 @@
 		desc="{"This is a raised card"}"/>
 
 </div>
-
+<hr>
 <div id="buttons" bind:this={buttons}>
 	<h2>Buttons:</h2>
-	<Button buttonTxt="button"/>
+	<Button buttonTxt="default button"/>
+	<Button buttonTxt="outline button" mode="outline" on:click={()=>{console.log("clicked outline button");}}/>
+	<Button buttonTxt="rounded button" mode="rounded" />
+	<Button buttonTxt="text" mode="text" />
 
 </div>
+<hr>

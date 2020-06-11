@@ -1,15 +1,17 @@
 <script>
 	import List from "./List.svelte";
 	import Card from "./Card.svelte";
+	import Button from "./Button.svelte";
 	let lists;
 	let cards;
+	let buttons;
 	let items = [{name: "Milk"},
 				{name: "Sugar"},
 				{name:"Flour"},
 				{name:"Rice"},
 				{name:"Chia"}
 				];
-	let options = [{name: "like"},
+	let options = [{name: "like", icon: "p"},
 				{name: "favorite"},
 				{name:"subscribe"},
 				{name:"follow"}
@@ -19,6 +21,7 @@
 		{name:"Potatoes", icon: "x"},
 		{name:"Cabbage", icon: "x"}
 		];
+
 	const selectionMade = (event)=>{
 			console.log(event.detail.selection.trim());
 			let selector = event.detail.selection.trim();
@@ -28,11 +31,17 @@
 			else if(selector === "cards"){
 				cards.scrollIntoView();
 			}
+			else if(selector === "buttons"){
+				buttons.scrollIntoView();
+			}
 		};
 	
 </script>
 
 <style>
+	html, body{
+		height: 100%;
+	}
 	.slotP{
 		text-align: right;
 	}
@@ -40,10 +49,16 @@
 		width: 50%;
 		height: 50%;
 	}
+	#cards{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		
+	}
 </style>
+
 <!-- Using a list component as a navbar-->
 
-<List 	items="{[{name: "lists"}, {name: "cards"}]}" 
+<List 	items="{[{name: "lists"}, {name: "cards"}, {name: "buttons"}]}" 
 		title="{" Component Library Menu"}" 
 		dropDown={true} 
 		horizontal={false}
@@ -91,7 +106,7 @@
 
 </div>
 
-<div bind:this={cards}>
+<div id="cards" bind:this={cards}>
 <h2>Cards:</h2>
 <Card title="{"Card 1"}"
 		image="{"https://techanimate.com/wp-content/uploads/2018/01/piccolo-quotes-thumbnail-1024x576.jpg"}"
@@ -149,4 +164,48 @@
 	</div>
 
 </Card>
+
+<Card title="{"Expandable Card"}"
+		image="{"https://techanimate.com/wp-content/uploads/2018/01/piccolo-quotes-thumbnail-1024x576.jpg"}"
+		mode="outlined"
+		desc="{"This card can expand to full screen when clicked"}"
+		expandable={true}/>
+
+
+<Card title={"Layout 2 Expandable"}
+		subtitle="{"---"}"
+		image="{"https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Vegeta_Dragon_Ball.jpg/220px-Vegeta_Dragon_Ball.jpg"}"
+		desc={"Nested components. A button list component is nested in this card"}
+		layout="layout-2"
+		expandable={true}
+		expandText="{"open"}"
+	>
+	
+	<div slot="bottom">
+		<h5>options:</h5>
+		<List
+			horizontal={true}
+			items={options}
+			buttonList={true}
+			on:select={(e)=>{
+				e.preventDefault();
+				console.log("button pressed");
+				}}
+		/>
+	</div>
+
+</Card>
+
+<Card title="{"Raised"}"
+		image="{"https://techanimate.com/wp-content/uploads/2018/01/piccolo-quotes-thumbnail-1024x576.jpg"}"
+		subtitle={"---"} 
+		mode="raised"
+		desc="{"This is a raised card"}"/>
+
+</div>
+
+<div id="buttons" bind:this={buttons}>
+	<h2>Buttons:</h2>
+	<Button buttonTxt="button"/>
+
 </div>

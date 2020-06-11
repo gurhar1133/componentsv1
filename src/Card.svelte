@@ -12,8 +12,9 @@
     border: 1px solid #aaa;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    max-width: 70%;
-    max-height: 80%;
+    width: 70%;
+    height: 80%;
+    max-width: 600px;
     padding: 1rem 1rem;
     margin: 1rem 1rem 1rem 1rem;
 }

@@ -38,7 +38,7 @@
     transition: background-color 0.7s ease;
     color: rgb(167, 54, 167);
     background:#fff;
-    border: 1px solid rgb(167, 54, 167);
+    border: 4px solid rgba(167, 54, 167, 0.3);
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;
@@ -63,7 +63,7 @@
     transition: background-color 0.7s ease;
     color: #fff;
     background: rgb(167, 54, 167);
-    border: 1px solid rgb(167, 54, 167);
+    border: 4px solid rgba(167, 54, 167, .3);
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;
@@ -87,7 +87,7 @@
     transition: background-color 0.7s ease;
     color: rgb(167, 54, 167);
     background: #fff;
-    border: 1px solid rgb(167, 54, 167);
+    border: 4px solid rgba(167, 54, 167, .3);
     border-radius: 30px;
     margin: 0 1rem;
     padding: .5rem 1rem;
@@ -96,7 +96,7 @@
     cursor: pointer;
 }
 .text{
-    transition: all 0.4s ease;
+    transition: background 0.3s ease;
     color: rgb(167, 54, 167);
     background: #fff;
     border: 0px solid rgb(167, 54, 167);
@@ -109,12 +109,13 @@
 }
 .text:hover{
     background: rgb(240, 208, 240);
+    
 }
 .textActive{
-    transition: all 0.4s ease;
+    transition: background 0.7s ease;
     color: #fff;
-    background: rgb(167, 54, 167);
-    border: 0px solid rgb(167, 54, 167);
+    background: rgba(167, 54, 167, .3);
+    border: 0px solid rgba(167, 54, 167, .3);
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;

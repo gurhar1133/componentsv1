@@ -36,6 +36,9 @@
 .dark{
     background-color: rgba(0,0,0,.7);
     color: white;
+    border: 0px solid #ccc; 
+    border-top-left-radius: 40px;
+    
     
 }
 .list{
@@ -45,13 +48,14 @@
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     margin: 1rem 1rem 1rem 1rem;
-    
+    border-top-left-radius: 40px;
 }
 .listHor{
     display: inline-flex;
     max-width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    border-top-left-radius: 40px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     margin: 1rem 1rem 1rem 1rem;
 }
@@ -68,6 +72,7 @@
     display: flex;
     padding: .5rem .5rem;
     background: rgb(30,30,30);
+    border-top-left-radius: 40px;
 }
 .listItem{
     margin: 0 1rem;
@@ -215,7 +220,10 @@
     background: rgb(167, 54, 167);
     cursor: pointer;
 }
-
+.list h3{
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+}
 </style>
 
 {#if darkMode && !buttonList}

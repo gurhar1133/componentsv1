@@ -57,39 +57,67 @@
 	h2{
 		margin-left: 2rem;
 	}
+	#lists{
+		display: block;
+	}
+	.nav{
+		margin-left: 0px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 100;
+	}
 </style>
 
 <!-- Using a list component as a navbar-->
-
+<div class="nav">
 <List 	items="{[{name: "lists"}, {name: "cards"}, {name: "buttons"}]}" 
-		title="{" Component Library Menu"}" 
+		title="{"nav"}" 
 		dropDown={true} 
-		horizontal={false}
+		horizontal={true}
 		darkMode="{true}"
 		showIcons="{false}"
 		on:select={selectionMade}
 		/>
+		<br>
+</div>
 
-<hr>
-<div bind:this={lists}>
+<div id="lists" bind:this={lists}>
+<br><br><br><br><br>
 <h2>Lists:</h2>
-
+<hr>
 <List 	items="{items}" 
-		title="{"Horizontal List: "}" 
+		title="{"Horizontal List "}" 
 		dropDown={false} 
 		horizontal={true}
 		darkMode="{false}"
 		showIcons="{false}"
 		/>
-
 <List 	items="{itemsWIcon}" 
-		title="{"My List Two"}" 
+		title="{"Opening"}" 
+		dropDown={true} 
+		horizontal={true}
+		darkMode="{false}"
+		showIcons="{false}"
+		/>
+<br>
+<br>
+<List 	items="{itemsWIcon}" 
+		title="{"Default List"}" 
+		dropDown={false} 
+		horizontal={false}
+		darkMode="{false}"
+		showIcons="{true}"
+	/>
+	<br>
+<List 	items="{itemsWIcon}" 
+		title="{"Default Dropdown List"}" 
 		dropDown={true} 
 		horizontal={false}
 		darkMode="{false}"
 		showIcons="{true}"
 	/>
-
+<br>
 	<List 	items="{itemsWIcon}" 
 		title="{"Dark List"}" 
 		dropDown={true} 
@@ -98,7 +126,7 @@
 		showIcons="{true}"
 	/>
 
-
+<br>
 <List 	items="{itemsWIcon}" 
 		title="{"Dark Horizontal"}" 
 		dropDown={true} 
@@ -108,9 +136,11 @@
 	/>
 
 </div>
+
+<h2>Cards:</h2>
 <hr>
 <div id="cards" bind:this={cards}>
-<h2>Cards:</h2>
+
 <Card title="{"Card 1"}"
 		image="{"https://techanimate.com/wp-content/uploads/2018/01/piccolo-quotes-thumbnail-1024x576.jpg"}"
 		subtitle={"Card without slot Data"} 
@@ -206,13 +236,14 @@
 		desc="{"This is a raised card"}"/>
 
 </div>
-<hr>
+
 <div id="buttons" bind:this={buttons}>
 	<h2>Buttons:</h2>
+	<hr>
 	<Button buttonTxt="default button"/>
 	<Button buttonTxt="outline button" mode="outline" on:click={()=>{console.log("clicked outline button");}}/>
 	<Button buttonTxt="rounded button" mode="rounded" />
-	<Button buttonTxt="text" mode="text" />
+	<Button buttonTxt="text button" mode="text" />
 
 </div>
 <hr>

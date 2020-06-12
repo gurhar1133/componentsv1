@@ -42,7 +42,7 @@
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;
-    font-weight: bold;
+    
     margin-bottom: 1rem;
     cursor: pointer;
 }
@@ -67,7 +67,7 @@
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;
-    font-weight: bold;
+    
     margin-bottom: 1rem;
     cursor: pointer;
 }
@@ -91,7 +91,7 @@
     border-radius: 30px;
     margin: 0 1rem;
     padding: .5rem 1rem;
-    font-weight: bold;
+    
     margin-bottom: 1rem;
     cursor: pointer;
 }
@@ -118,7 +118,7 @@
     border-radius: 4px;
     margin: 0 1rem;
     padding: .5rem 1rem;
-    font-weight: bold;
+    
     margin-bottom: 1rem;
     cursor: pointer;
 }

@@ -3,7 +3,7 @@
     // light and dark themes
     //
     import {createEventDispatcher} from "svelte";
-    import {slide, fly} from "svelte/transition";
+    import {slide, fly, fade} from "svelte/transition";
     const dispatch = createEventDispatcher();
     export let items;
     export let title;
@@ -36,16 +36,19 @@
 .dark{
     background-color: rgba(0,0,0,.7);
     color: white;
+    
 }
 .list{
+    display: inline-block;
     max-width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     margin: 1rem 1rem 1rem 1rem;
+    
 }
 .listHor{
-    display: flex;
+    display: inline-flex;
     max-width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -170,7 +173,7 @@
     color: white;
     background-color: rgba(30,30,30,.7);
     border: 0px solid #ccc;
-    position: absolute;
+    /* position: absolute; */
     
     margin-right: 1rem;
     font-size: 25px;
@@ -178,12 +181,12 @@
     right: 0;
     
     margin-left: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: .5rem .5rem .5rem .5rem;
     cursor: pointer;
 }
 .dropBtn{
     border: 0px solid #ccc;
-    position: absolute;
+    /* position: absolute; */
     color: black;
     margin-right: 1rem;
     font-size: 25px;
@@ -191,7 +194,7 @@
     right: 0;
     background-color: white;
     margin-left: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: .5rem .5rem .5rem .5rem;
     cursor: pointer;
     
 }
@@ -227,7 +230,7 @@
         {#if dropDownState === "open"}
             {#each items as item}
                 {#if horizontal}
-                    <div on:click={selectItem} transition:slide class="listItemHorDark">
+                    <div on:click={selectItem} transition:fly={{x:-400, duration: 600}}  class="listItemHorDark">
                         {#if showIcons}
                             <span id="icon"> {item.icon} </span>
                         {/if}
@@ -270,7 +273,7 @@
         {#if dropDownState === "open"}
             {#each items as item}
                 {#if horizontal}
-                    <div on:click={selectItem} transition:fly={{x:-100, y:-100, duration: 500}} class={horizontal ? "listItemHor" : "listItem"}>
+                    <div on:click={selectItem} transition:fly={{x:-400, duration: 600}} class={horizontal ? "listItemHor" : "listItem"}>
                         {#if showIcons}
                             <span id="icon"> {item.icon} </span>
                         {/if}
